@@ -1,14 +1,10 @@
+# configuration for command patterns
+
 class Config
+  # the degree value for different directions
+
   def self.direction_convertor
     { "EAST" => 0, "SOUTH" => 90, "WEST" => 180, "NORTH" => 270 }
-  end
-
-  def self.table_size_x
-    5
-  end
-
-  def self.table_size_y
-    5
   end
 
   def self.valid_commands

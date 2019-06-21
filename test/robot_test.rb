@@ -61,4 +61,30 @@ class RobotTest < MiniTest::Unit::TestCase
     robot.move
     assert_equal "0,0,WEST", robot.report
   end
+
+  def test_invalid_move_a
+    robot = Robot.new(0, 0, "NORTH")
+    robot.left
+    robot.move
+    assert_equal "0,0,WEST", robot.report
+  end
+
+  def test_invalid_move_b
+    robot = Robot.new(4, 4, "NORTH")
+    robot.move
+    robot.left
+    assert_equal "4,4,WEST", robot.report
+  end
+
+  def test_invalid_move_c
+    robot = Robot.new(0, 4, "NORTH")
+    robot.move
+    assert_equal "0,4,NORTH", robot.report
+  end
+
+  def test_invalid_move_d
+    robot = Robot.new(4, 0, "EAST")
+    robot.move
+    assert_equal "4,0,EAST", robot.report
+  end
 end
